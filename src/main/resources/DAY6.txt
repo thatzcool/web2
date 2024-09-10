@@ -12,3 +12,33 @@
 3. 한글 필터링 처리  (UTF-8 필터)
 
  HttpServletRequest 의 데이터를  setCharachterEncoding 속성값을 UTF-8 으로 셋팅
+
+
+4. 로그인과 로그아웃의 동작여부를 이해하고 확인 해 보았다.
+   실제 데이터베이스를 이용해서 회원정보를 구성하고 이 내용을 활용하여 실습
+
+5. 데이터베이스에 회원을 저장할 테이블을 생성, 3명의 임시 회원이 가입한 상황
+
+6. 자바에서 회원 데이터 처리 => 자바에서 객체 처리되도록 VO / DAO 준비 한다.
+    - domain<MemberVO
+
+
+    - dao< MemberDAO  배치
+      public MemberVO getWithPassword(String mid, String mpw)  => 회원의 아이디와 비밀번호를 받아 회원의 정보를 제공한다.
+
+
+    - dto < MemberDTO
+
+
+
+    - service < MemberService
+      MemberService 는 여러곳에서 동일한 객체를 사용할 수 있도록 enum 으로 하나의 객체로 구성하여 MemberDAO를 이용하도록 구성합니다.
+
+      MemberService내에는 로그인 처리를 위한 login()메소드를 작성합니다.
+      modelMapper 를 이용합니다.
+
+
+    - LoginController 의 doPost에서 MemberService를 연동해서 실제로 로그인이 되도록 구동합니다.
+
+
+     본인 깃헙에 올리시고 깃헙 링크 슬랙 보내주세요. ^^
